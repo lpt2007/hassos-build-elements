@@ -1,0 +1,170 @@
+####################################################
+# AUTOMATION - KITCHEN WIFI-IR HOOD FAN SPEED
+####################################################
+# added: 05.04.2019
+##
+
+  - alias: Set fan speed 0.0 to 1.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      # Optional
+      from: '0.0'
+      to: '1.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'lowest'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_on_off
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_down
+
+
+  - alias: Set fan speed 1.0 to 0.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '1.0'
+      to: '0.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'off'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_on_off
+
+  - alias: Set fan speed 1.0 to 2.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '1.0'
+      to: '2.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'low'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_up
+
+  - alias: Set fan speed 2.0 to 1.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '2.0'
+      to: '1.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'down-lowest'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_down
+
+
+  - alias: Set fan speed 2.0 to 3.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '2.0'
+      to: '3.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'medium'
+
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_up
+
+  - alias: Set fan speed 3.0 to 2.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '3.0'
+      to: '2.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'down-low'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_down
+
+
+  - alias: Set fan speed 3.0 to 4.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '3.0'
+      to: '4.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'high'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_up
+
+  - alias: Set fan speed 4.0 to 3.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '4.0'
+      to: '3.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'down-medium'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_down
+
+
+  - alias: Set fan speed 4.0 to 5.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '4.0'
+      to: '5.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'highest'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_up
+
+  - alias: Set fan speed 5.0 to 4.0
+    trigger:
+      platform: state
+      entity_id: input_number.kitchen_hood_fan_speed
+      from: '5.0'
+      to: '4.0'
+
+    action:
+      - service: mqtt.publish
+        data:
+          topic: 'home/kitchen/sensor/hood-fan-speed'
+          payload: 'down-high'
+      - service: switch.turn_on
+        entity_id: switch.kitchen_hood_fan_down
+
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

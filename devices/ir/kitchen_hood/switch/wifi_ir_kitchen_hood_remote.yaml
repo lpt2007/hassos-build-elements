@@ -1,0 +1,52 @@
+#https://home-assistant.io/components/switch/
+
+####################################################
+#                                                  #
+#             BROADLINK IR SWITCHES                #
+#                                                  #
+####################################################
+
+#https://home-assistant.io/components/switch.broadlink/
+
+####################################################
+#                                                  #
+#                   KITCHEN HOOD                   #
+#                                                  #
+####################################################
+#                                                  #
+#                     KITCHEN                      #
+#                                                  #
+####################################################
+
+# Naziv: Napa Kuhinjska
+# Lokacija: kuhinja
+  - platform: broadlink
+    host: 192.168.2.1
+    mac: '34:EA:34:8F:86:15'
+    timeout: 15
+    switches:
+      kitchen_hood_light_on_off:
+        friendly_name: "kitchen_hood_light_on_off"
+        command_on: 'JgBIAAABLJETNxMTFBEUERQRFBEUERU1ExITOBI4ExITEhM3EzcTExI4ExITEhM3EzcTEhMTEjgTEhM3EzcTEhMSEzgSOBMSEwANBQ=='
+        command_off: 'JgBIAAABLJETNxMTFBEUERQRFBEUERU1ExITOBI4ExITEhM3EzcTExI4ExITEhM3EzcTEhMTEjgTEhM3EzcTEhMSEzgSOBMSEwANBQ=='
+
+      kitchen_hood_fan_on_off:
+        friendly_name: "kitchen_hood_fan_on_off"
+        command_on: 'JgBQAAABK5IVNhUQFRAVEBUQFRAVEBU2FRAVNRU1FRAVEBU2FTUVEBU1FRAVERUQFRAVEBUQFTUVEBU2FTUVNRU1FTUWNRUQFQAFbQABLEcWAA0FAAAAAAAAAAA='
+        command_off: ''
+     
+      kitchen_hood_fan_down:
+        friendly_name: "kitchen_hood_fan_down"
+        command_on: 'JgBIAAABKpMUNhMTExITEhMSFBEUERQ2FBISOBM3FBEUERM3FDcTEhMSEzcUERQ2FBITEhMSEzcUNhMSEzgTEhM3FDYUNhMTEwANBQ=='
+        command_off: ''
+
+      kitchen_hood_fan_up:
+        friendly_name: "kitchen_hood_fan_up"
+        command_on: 'JgBQAAABK5IUNxMSExITEhUQFBEUERQ2FBITNxQ2FBEUERQ3EzcTEhQ2FBEUNxMSExITEhMSFDYUERQ3ExITNxQ2FDYUNxMSEwAFbwABK0gUAA0FAAAAAAAAAAA='
+        command_off: ''
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

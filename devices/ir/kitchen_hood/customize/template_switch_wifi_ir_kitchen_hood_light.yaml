@@ -1,0 +1,14 @@
+####################################################
+## template - switch.wifi_ir_kitchen_hood_light
+####################################################
+
+    switch.wifi_ir_kitchen_hood_light:
+      hidden: false
+      icon: mdi:lightbulb-outline
+      friendly_name: luc
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

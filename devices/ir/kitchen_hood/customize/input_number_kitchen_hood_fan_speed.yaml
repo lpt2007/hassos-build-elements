@@ -1,0 +1,14 @@
+####################################################
+## input_number.kitchen_hood_fan_speed
+####################################################
+
+    input_number.kitchen_hood_fan_speed:
+      hidden: false
+      icon: mdi:settings-outline
+      friendly_name: nastavi
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

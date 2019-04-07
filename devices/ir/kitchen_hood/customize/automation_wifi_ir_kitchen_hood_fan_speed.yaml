@@ -1,0 +1,41 @@
+####################################################
+## automation.wifi_ir_kitchen_hood_fan_speed
+####################################################
+
+    automation.set_fan_speed_0_0_to_1_0:
+      hidden: true
+
+    automation.set_fan_speed_1_0_to_0_0:
+      hidden: true
+
+    automation.set_fan_speed_1_0_to_2_0:
+      hidden: true
+
+    automation.set_fan_speed_2_0_to_1_0:
+      hidden: true
+
+    automation.set_fan_speed_2_0_to_3_0:
+      hidden: true
+
+    automation.set_fan_speed_3_0_to_2_0:
+      hidden: true
+
+    automation.set_fan_speed_3_0_to_4_0:
+      hidden: true
+
+    automation.set_fan_speed_4_0_to_3_0:
+      hidden: true
+
+    automation.set_fan_speed_4_0_to_5_0:
+      hidden: true
+
+    automation.set_fan_speed_5_0_to_4_0:
+      hidden: true
+
+
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

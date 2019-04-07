@@ -1,0 +1,21 @@
+####################################################
+## switch.wifi_ir_kitchen_hood_remote
+####################################################
+
+    switch.kitchen_hood_light_on_off:
+      hidden: true
+
+    switch.kitchen_hood_fan_on_off:
+      hidden: true
+
+    switch.kitchen_hood_fan_down:
+      hidden: true
+
+    switch.kitchen_hood_fan_up:
+      hidden: true
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

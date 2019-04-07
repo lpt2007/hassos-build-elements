@@ -1,0 +1,14 @@
+####################################################
+## sensor.mqtt_kitchen_hood_fan_speed_sensing
+####################################################
+
+    sensor.mqtt_kitchen_hood_fan_speed_sensing:
+      hidden: false
+      icon: mdi:fan
+      friendly_name: stopnja
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################

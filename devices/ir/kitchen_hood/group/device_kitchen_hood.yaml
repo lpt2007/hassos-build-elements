@@ -1,0 +1,26 @@
+#https://home-assistant.io/components/group
+
+####################################################
+#                                                  #
+#                     DEVICE                       #
+#                                                  #
+####################################################
+
+####################################################
+#KITCHEN HOOD
+####################################################
+
+  kitchen_hood:
+    name: KUHINJSKA NAPA
+    control: hidden
+    entities:
+      - switch.wifi_ir_kitchen_hood_light
+      - sensor.mqtt_kitchen_hood_fan_speed_sensing
+      - input_number.kitchen_hood_fan_speed
+
+
+####################################################
+#                                                  #
+#           END OF CONFIGURATION FILE              #
+#                                                  #
+####################################################
