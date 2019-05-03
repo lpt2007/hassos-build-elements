@@ -1,0 +1,24 @@
+####################################################
+#GROUP/DEVICE - IR-WIFI KITCHEN LIGHT
+#################################################### 
+#https://home-assistant.io/components/group
+#/config/group
+#date: 07.04.2019
+
+  kitchen_light:
+    name: LUC
+    control: hidden
+    entities:
+      - switch.ir_kitchen_light_template
+      - input_number.kitchen_light_ct
+      - input_number.kitchen_light_dimm
+      - switch.ir_kitchen_light_sun_template
+      - switch.ir_kitchen_light_moon_template
+      - switch.ir_kitchen_light_star_template
+      - switch.ir_kitchen_light_work_template
+
+####################################################
+#                                                  #
+#           END OF CONFIGURATION FILE              #
+#                                                  #
+####################################################
