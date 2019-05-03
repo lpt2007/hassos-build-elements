@@ -1,0 +1,109 @@
+####################################################
+#IR KITCHEN LIGHT AUTOMATION
+#################################################### 
+#https://www.home-assistant.io/components/automation/
+#/config/automation
+#date: 29.04.2019
+
+####################################################
+# DIMMING
+####################################################
+
+- alias: 'ir_kitchen_light_set_dimm'
+  trigger:
+    platform: state
+    entity_id: input_number.kitchen_light_dimm
+  action:
+    service: python_script.dimm_control
+    data_template:
+      command: >-
+        {% set to = trigger.to_state.state | int %}
+        {% set from = trigger.from_state.state | int %}
+        {% set diff = (from - to) | round(0) %}
+        {% set slider = states('input_number.kitchen_light_dimm') | round(0) %}
+        {% set step = (diff / 10) | round(0) %}
+        {% if slider == 0 %}
+          0
+        {% elif slider == 100 %}
+          11
+        {% elif slider == 10 %}
+          12
+        {% else %}
+          {{step}}
+        {% endif %}
+
+####################################################
+# CAOLOUR TEMPERATURE
+####################################################
+
+- alias: 'ir_kitchen_light_set_ct'
+  trigger:
+    platform: state
+    entity_id: input_number.kitchen_light_ct
+  action:
+    service: python_script.ct_control
+    data_template:
+      command: >-
+        {% set to = trigger.to_state.state | int %}
+        {% set from = trigger.from_state.state | int %}
+        {% set diff = (from - to) | round(0) %}
+        {% set slider = states('input_number.kitchen_light_ct') | round(0) %}
+        {% set step = (diff / 10) | round(0) %}
+        {% if slider == 0 %}
+          0
+        {% elif slider == 100 %}
+          11
+        {% elif slider == 10 %}
+          12
+        {% else %}
+          {{step}}
+        {% endif %}
+
+####################################################
+# WHEN ON SUN ABOVE HORIZON LIGHT 100%
+####################################################
+
+- alias: 'ir_kitchen_light_100_sun_above'
+  trigger:
+    platform: state
+    entity_id: switch.ir_kitchen_light
+    to: 'on'
+
+  condition:
+    - condition: state
+      entity_id: 'sun.sun'
+      state: 'above_horizon'
+
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.kitchen_light_dimm
+        value: 100
+
+####################################################
+# WHEN ON SUN BELOW HORIZON LIGHT 10%
+####################################################
+
+- alias: 'ir_kitchen_light_100_sun_below'
+  trigger:
+    platform: state
+    entity_id: switch.ir_kitchen_light
+    to: 'on'
+
+  condition:
+    - condition: state
+      entity_id: 'sun.sun'
+      state: 'below_horizon'
+
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.kitchen_light_dimm
+        value: 10
+
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
