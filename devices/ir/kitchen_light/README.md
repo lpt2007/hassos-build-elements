@@ -30,3 +30,8 @@ W:"JgBQAAABJ5EUEBQ1FBAUEBQ1FDUUERM1FDUVEBQ1FDUUEBQQFDUUEBQ1FBAUEBQQFBAUEBQ1FDUUE
 ```
 BIG THANKS 123 and petro from ha comunity https://community.home-assistant.io/
 ```
+
+# TODO
+```
+add this switch when arrives: https://www.ebay.com/itm/Xiaomi-Yeelight-Smart-bluetooth-Wireless-Wall-Pasted-Light-Switch-Fr-Mihome-App/183736726887?ssPageName=STRK%3AMEBIDX%3AIT&var=691325978107&_trksid=p2057872.m2749.l2649
+```
