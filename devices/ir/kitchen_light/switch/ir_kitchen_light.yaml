@@ -1,0 +1,155 @@
+####################################################
+#IR KITCHEN LIGHT ON / OFF
+#################################################### 
+#https://home-assistant.io/components/switch.broadlink/
+#/config/switch
+#date: 03.05.2019
+
+####################################################
+# TEMPLATE - ON / OFF SWITCH
+####################################################
+
+  - platform: template
+    switches:
+      ir_kitchen_light_template:
+        value_template: "{{ states('input_number.kitchen_light_dimm') > '0.0' }}"
+        turn_on:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 100
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 100
+
+        turn_off:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 0
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+####################################################
+# TEMPLATE - MOON MODE
+####################################################
+
+  - platform: template
+    switches:
+      ir_kitchen_light_moon_template:
+        value_template: "{{ is_state('input_number.kitchen_light_dimm', '10.0' ) and is_state('input_number.kitchen_light_ct', '100.0')  }}"
+        turn_on:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 10
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 100
+
+        turn_off:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 0
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+####################################################
+# TEMPLATE - WORK MODE
+####################################################
+
+  - platform: template
+    switches:
+      ir_kitchen_light_work_template:
+        value_template: "{{ is_state('input_number.kitchen_light_dimm', '100.0') and is_state('input_number.kitchen_light_ct', '0.0') }}"
+        turn_on:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 100
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+        turn_off:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 0
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+
+####################################################
+# TEMPLATE - SUN MODE
+####################################################
+
+  - platform: template
+    switches:
+      ir_kitchen_light_sun_template:
+        value_template: "{{ is_state('input_number.kitchen_light_dimm', '100.0') and is_state('input_number.kitchen_light_ct', '100.0') }}"
+        turn_on:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 100
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 100
+
+        turn_off:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 0
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+####################################################
+# TEMPLATE - STAR MODE
+####################################################
+
+  - platform: template
+    switches:
+      ir_kitchen_light_star_template:
+        value_template: "{{ is_state('input_number.kitchen_light_dimm', '10.0') and is_state('input_number.kitchen_light_ct', '0.0') }}"
+        turn_on:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 10
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+        turn_off:
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_dimm
+              value: 0
+          - service: input_number.set_value
+            data_template:
+              entity_id: input_number.kitchen_light_ct
+              value: 0
+
+
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
