@@ -8,98 +8,20 @@ if cmd is not None:
   cmd = int(cmd)
   if -10 <= cmd <= 12:
     if cmd == 0:
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
+      for i in range(10):
+          service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
+          hass.services.call('broadlink', 'send', service_data, False)
+          time.sleep(0.55)
     elif cmd == 12:
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
+      for i in range(10):
+          service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['C'])}
+          hass.services.call('broadlink', 'send', service_data, False)
+          time.sleep(0.55)
     elif cmd == 11:
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
-      service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
-      hass.services.call('broadlink', 'send', service_data, False)
-      time.sleep(0.55)
+      for i in range(10):
+          service_data = {'host':'192.168.2.1', 'packet':'{}'.format(rf['W'])}
+          hass.services.call('broadlink', 'send', service_data, False)
+          time.sleep(0.55)
     else:
       if cmd > 0:
         rfc = rf['C']
