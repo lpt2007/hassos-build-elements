@@ -1,0 +1,77 @@
+####################################################
+## IR KITCHEN LIGHT
+####################################################
+#
+##17.4.2019
+
+
+
+####################################################
+# CHANGE NAMES AND ICONS
+####################################################
+
+    switch.ir_kitchen_light_template:
+      hidden: false
+      icon: mdi:lightbulb-outline
+      friendly_name: stikalo
+
+    input_number.kitchen_light_ct:
+      hidden: false
+      icon: mdi:invert-colors
+      friendly_name: barvna temperatura
+      unit_of_measurement: '%'
+
+    input_number.kitchen_light_dimm:
+      hidden: false
+      icon: mdi:brightness-6
+      friendly_name: svetlost
+      unit_of_measurement: '%'
+
+    switch.ir_kitchen_light_work_template:
+      hidden: false
+      icon: mdi:briefcase-outline
+      friendly_name: delo
+
+    switch.ir_kitchen_light_sun_template:
+      hidden: false
+      icon: mdi:weather-sunny
+      friendly_name: sonce
+
+    switch.ir_kitchen_light_moon_template:
+      hidden: false
+      icon: mdi:weather-night
+      friendly_name: lunica
+
+    switch.ir_kitchen_light_star_template:
+      hidden: false
+      icon: mdi:star-four-points-outline
+      friendly_name: zvezda
+
+####################################################
+# HIDE SWITCH
+####################################################
+
+    switch.ir_kitchen_light:
+      hidden: true
+
+####################################################
+# HIDE AUTOMATION
+####################################################
+
+    automation.ir_kitchen_light_set_dimm:
+      hidden: true
+
+    automation.ir_kitchen_light_100_sun_below:
+      hidden: true
+
+    automation.ir_kitchen_light_set_ct:
+      hidden: true
+
+    automation.ir_kitchen_light_100_sun_above:
+      hidden: true
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
