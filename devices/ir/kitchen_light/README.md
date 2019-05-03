@@ -1,5 +1,9 @@
 # IR KITCHE LIGHT - HASS CONTROL
 
+# HARDWARE
+- ir led light with color temperature and dimm control + sun and moon mode
+- broadlink rm mini 3 form this link: https://www.banggood.com/Broadlink-Black-Bean-Smart-Home-Wifi-Remote-IR-Controller-Universal-Appliances-Smart-Control-p-1049494.html?rmmds=search&cur_warehouse=CN
+
 configuration.yaml
 ```
   customize: !include_dir_merge_named customize/
