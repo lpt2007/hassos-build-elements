@@ -7,6 +7,8 @@
 configuration.yaml
 ```
   customize: !include_dir_merge_named customize/
+  
+input_number: !include components/input_number.yaml
 
 sun:
 python_script:
