@@ -12,25 +12,25 @@
   - platform: template
     switches:
       ir_kitchen_light_template:
-        value_template: "{{ states('input_number.kitchen_light_dimm') > '0.0' }}"
+        value_template: "{{ states('input_number.ir_kitchen_light_dimm') > '0.0' }}"
         turn_on:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 100
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 100
 
         turn_off:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 0
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
 ####################################################
@@ -40,25 +40,25 @@
   - platform: template
     switches:
       ir_kitchen_light_moon_template:
-        value_template: "{{ is_state('input_number.kitchen_light_dimm', '10.0' ) and is_state('input_number.kitchen_light_ct', '100.0')  }}"
+        value_template: "{{ is_state('input_number.ir_kitchen_light_dimm', '10.0' ) and is_state('input_number.ir_kitchen_light_ct', '100.0')  }}"
         turn_on:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 10
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 100
 
         turn_off:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 0
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
 ####################################################
@@ -68,25 +68,25 @@
   - platform: template
     switches:
       ir_kitchen_light_work_template:
-        value_template: "{{ is_state('input_number.kitchen_light_dimm', '100.0') and is_state('input_number.kitchen_light_ct', '0.0') }}"
+        value_template: "{{ is_state('input_number.ir_kitchen_light_dimm', '100.0') and is_state('input_number.ir_kitchen_light_ct', '0.0') }}"
         turn_on:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 100
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
         turn_off:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 0
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
 
@@ -97,25 +97,25 @@
   - platform: template
     switches:
       ir_kitchen_light_sun_template:
-        value_template: "{{ is_state('input_number.kitchen_light_dimm', '100.0') and is_state('input_number.kitchen_light_ct', '100.0') }}"
+        value_template: "{{ is_state('input_number.ir_kitchen_light_dimm', '100.0') and is_state('input_number.ir_kitchen_light_ct', '100.0') }}"
         turn_on:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 100
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 100
 
         turn_off:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 0
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
 ####################################################
@@ -125,25 +125,25 @@
   - platform: template
     switches:
       ir_kitchen_light_star_template:
-        value_template: "{{ is_state('input_number.kitchen_light_dimm', '10.0') and is_state('input_number.kitchen_light_ct', '0.0') }}"
+        value_template: "{{ is_state('input_number.ir_kitchen_light_dimm', '10.0') and is_state('input_number.ir_kitchen_light_ct', '0.0') }}"
         turn_on:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 10
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
         turn_off:
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_dimm
+              entity_id: input_number.ir_kitchen_light_dimm
               value: 0
           - service: input_number.set_value
             data_template:
-              entity_id: input_number.kitchen_light_ct
+              entity_id: input_number.ir_kitchen_light_ct
               value: 0
 
 
