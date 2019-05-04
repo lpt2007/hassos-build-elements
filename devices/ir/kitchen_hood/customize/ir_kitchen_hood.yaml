@@ -1,0 +1,39 @@
+####################################################
+## IR KITCHEN HOOD
+####################################################
+#
+##17.4.2019
+
+####################################################
+# CHANGE NAMES AND ICONS
+####################################################
+
+    switch.ir_kitchen_hood_light_on_off_template:
+      hidden: false
+      icon: mdi:lightbulb-outline
+      friendly_name: lucka
+
+    switch.ir_kitchen_hood_fan_on_off_template:
+      hidden: false
+      icon: mdi:fan
+      friendly_name: ventilacija
+      unit_of_measurement: '%'
+
+    input_number.ir_kitchen_hood_fan_speed:
+      hidden: false
+      icon: mdi:fan
+      friendly_name: stopnja
+      unit_of_measurement: '%'
+
+####################################################
+# HIDE AUTOMATION
+####################################################
+
+    automation.ir_kitchen_hood_set_fan_set:
+      hidden: true
+
+####################################################
+#                                                  #
+#            END OF CONFIGURATION FILE             #
+#                                                  #
+####################################################
