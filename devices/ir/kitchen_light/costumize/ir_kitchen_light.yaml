@@ -15,13 +15,13 @@
       icon: mdi:lightbulb-outline
       friendly_name: stikalo
 
-    input_number.kitchen_light_ct:
+    input_number.ir_kitchen_light_ct:
       hidden: false
       icon: mdi:invert-colors
       friendly_name: barvna temperatura
       unit_of_measurement: '%'
 
-    input_number.kitchen_light_dimm:
+    input_number.ir_kitchen_light_dimm:
       hidden: false
       icon: mdi:brightness-6
       friendly_name: svetlost
