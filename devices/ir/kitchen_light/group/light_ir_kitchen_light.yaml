@@ -10,8 +10,8 @@
     control: hidden
     entities:
       - switch.ir_kitchen_light_template
-      - input_number.kitchen_light_ct
-      - input_number.kitchen_light_dimm
+      - input_number.ir_kitchen_light_ct
+      - input_number.ir_kitchen_light_dimm
       - switch.ir_kitchen_light_sun_template
       - switch.ir_kitchen_light_moon_template
       - switch.ir_kitchen_light_star_template
