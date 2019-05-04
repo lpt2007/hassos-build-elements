@@ -7,17 +7,16 @@
 ####################################################
 
 ####################################################
-#KITCHEN HOOD
+#IR KITCHEN HOOD
 ####################################################
 
-  kitchen_hood:
+  ir_kitchen_hood:
     name: KUHINJSKA NAPA
     control: hidden
     entities:
-      - switch.wifi_ir_kitchen_hood_light
-      - sensor.mqtt_kitchen_hood_fan_speed_sensing
-      - input_number.kitchen_hood_fan_speed
-
+      - switch.ir_kitchen_hood_light_on_off_template
+      - switch.ir_kitchen_hood_fan_on_off_template
+      - input_number.ir_kitchen_hood_fan_speed
 
 ####################################################
 #                                                  #
