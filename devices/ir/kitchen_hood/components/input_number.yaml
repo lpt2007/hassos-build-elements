@@ -3,15 +3,14 @@
 #                INPUT NUMBER                      #
 #                                                  #
 ####################################################
-
 #https://www.home-assistant.io/components/input_number/
+# 04.05.2019
 
 ####################################################
 ## KITCHEN HOOD FAN SPEED                     
 ####################################################
 
-  kitchen_hood_fan_speed:
-    name: "set_fan_speed"
+  ir_kitchen_hood_fan_speed:
     initial: 0
     min: 0
     max: 5
