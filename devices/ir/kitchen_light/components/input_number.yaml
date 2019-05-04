@@ -3,12 +3,12 @@
 ##https://www.home-assistant.io/components/input_number/
 #/config/components
 #date: 07.04.2019
+
 ####################################################
 ## IR KITCHEN LIGHT DIMM SLIDER                     
 ####################################################
 
-  kitchen_light_dimm:
-    name: "light_dimm"
+  ir_kitchen_light_dimm:
     initial: 0
     min: 0
     max: 100
@@ -18,12 +18,12 @@
 ## IR KITCHEN LIGHT CT SLIDER                   
 ####################################################
 
-  kitchen_light_ct:
-    name: "light_ct"
+  ir_kitchen_light_ct:
     initial: 0
     min: 0
     max: 100
     step: 10
+
 
 
 ####################################################
