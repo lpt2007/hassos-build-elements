@@ -12,15 +12,15 @@
 - alias: 'ir_kitchen_light_set_dimm'
   trigger:
     platform: state
-    entity_id: input_number.kitchen_light_dimm
+    entity_id: input_number.ir_kitchen_light_dimm
   action:
-    service: python_script.dimm_control
+    service: python_script.ir_kitchen_light_dimm_control
     data_template:
       command: >-
         {% set to = trigger.to_state.state | int %}
         {% set from = trigger.from_state.state | int %}
         {% set diff = (from - to) | round(0) %}
-        {% set slider = states('input_number.kitchen_light_dimm') | round(0) %}
+        {% set slider = states('input_number.ir_kitchen_light_dimm') | round(0) %}
         {% set step = (diff / 10) | round(0) %}
         {% if slider == 0 %}
           0
@@ -39,15 +39,15 @@
 - alias: 'ir_kitchen_light_set_ct'
   trigger:
     platform: state
-    entity_id: input_number.kitchen_light_ct
+    entity_id: input_number.ir_kitchen_light_ct
   action:
-    service: python_script.ct_control
+    service: python_script.ir_kitchen_light_ct_control
     data_template:
       command: >-
         {% set to = trigger.to_state.state | int %}
         {% set from = trigger.from_state.state | int %}
         {% set diff = (from - to) | round(0) %}
-        {% set slider = states('input_number.kitchen_light_ct') | round(0) %}
+        {% set slider = states('input_number.ir_kitchen_light_ct') | round(0) %}
         {% set step = (diff / 10) | round(0) %}
         {% if slider == 0 %}
           0
@@ -77,7 +77,7 @@
   action:
     - service: input_number.set_value
       data_template:
-        entity_id: input_number.kitchen_light_dimm
+        entity_id: input_number.ir_kitchen_light_dimm
         value: 100
 
 ####################################################
@@ -98,7 +98,7 @@
   action:
     - service: input_number.set_value
       data_template:
-        entity_id: input_number.kitchen_light_dimm
+        entity_id: input_number.ir_kitchen_light_dimm
         value: 10
 
 
