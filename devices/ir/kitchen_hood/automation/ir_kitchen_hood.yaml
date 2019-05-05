@@ -24,7 +24,7 @@
         {% set step = (diff / 1) | round(0) %}
         {% if slider == 0 %}
           0
-        {% elif slider == 1 %}
+        {% elif slider == 1 and diff == '-' %}
           6
         {% else %}
           {{step}}
@@ -44,7 +44,6 @@
       data_template:
         command: >-
             6
-
 
 ####################################################
 #                                                  #
