@@ -9,7 +9,7 @@
 # FAN CONTROL
 ####################################################
 
-- alias: 'ir_kitchen_hood_set_fan_set'
+- alias: 'ir_kitchen_hood_fan_set'
   trigger:
     platform: state
     entity_id: input_number.ir_kitchen_hood_fan_speed
@@ -29,6 +29,22 @@
         {% else %}
           {{step}}
         {% endif %}
+        
+####################################################
+# FAN AUTO ON
+####################################################
+
+- alias: 'ir_kitchen_hood_fan_auto_on'
+  trigger:
+    platform: state
+    entity_id: switch.ir_kitchen_hood_fan_on_off_template
+    to: 'on'
+  action:
+    - service: python_script.ir_kitchen_hood_fan_control
+      data_template:
+        command: >-
+            6
+
 
 ####################################################
 #                                                  #
