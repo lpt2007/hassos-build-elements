@@ -26,13 +26,16 @@
       unit_of_measurement: '%'
 
 ####################################################
-# HIDE AUTOMATION
+# HIDE ITEMS
 ####################################################
 
     automation.ir_kitchen_hood_fan_set:
       hidden: true
 
     automation.ir_kitchen_hood_fan_auto_on:
+      hidden: true
+
+    input_boolean.ir_kitchen_hood_light:
       hidden: true
 
 ####################################################
