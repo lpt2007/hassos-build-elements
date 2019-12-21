@@ -1,0 +1,39 @@
+####################################################
+##  ELECTRIC CONSUMPTION - UTILITY METER             
+####################################################
+####################################################
+## BATHROOM WASH & DRY
+####################################################
+##
+  bathroom_washer_and_dryer_electrical_energy_tariff:
+    source: sensor.bathroom_washer_and_dryer_rest_1pm_energy_total
+    cycle: daily
+    tariffs:
+      - VT
+      - MT
+##
+####################################################
+## HALLWAY CLIMATE
+####################################################
+##
+  hallway_climate_electrical_energy_tariff:
+    source: sensor.hallway_climate_mqtt_pow_energy_total
+    cycle: daily
+    tariffs:
+      - VT
+      - MT
+##
+####################################################
+## CHILDRENSROOM ELECTRONICS
+####################################################
+##
+  childrensroom_electronics_electrical_energy_tariff:
+    source: sensor.childrensroom_electronics_mqtt_pow_energy_total
+    cycle: daily
+    tariffs:
+      - VT
+      - MT
+##
+####################################################
+## END
+####################################################
