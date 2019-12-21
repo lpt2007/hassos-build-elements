@@ -1,0 +1,112 @@
+entities:
+  - entity: sensor.electrical_energy_vt_today
+    icon: 'mdi:flash-red-eye'
+    name: Poraba (danes VT)
+  - entity: sensor.electrical_energy_mt_today
+    icon: hide
+    name: Poraba (danes MT)
+  - entity: sensor.electrical_energy_today
+    icon: hide
+    name: Poraba (danes)
+  - type: divider
+  - entity: sensor.electrical_energy_vt_cost_today
+    icon: 'mdi:account-cash'
+    name: Stroški (danes VT)
+  - entity: sensor.electrical_energy_mt_cost_today
+    icon: hide
+    name: Stroški (danes MT)
+  - entity: sensor.electrical_energy_cost_today
+    icon: hide
+    name: Stroški (danes)
+  - type: divider
+  - entity: sensor.cumulative_energy_cost
+    icon: 'mdi:account-cash'
+    name: Kumulativni Stroški Energije
+  - entity: sensor.last_reset
+    icon: 'mdi:calendar-check-outline'
+    name: ponastavljeno
+  - entity: script.reset_cumulative_cost
+    icon: 'mdi:script-text-outline'
+    name: ponastavi kumulativne stroške
+  - entities:
+      - entity: input_number.electrical_energy_cost_vt
+        name: Vijša Tarifa
+      - entity: input_number.electrical_energy_cost_mt
+        name: Nižja Tarifa
+    head:
+      label: TARIFE
+      type: section
+    padding: 0
+    type: 'custom:fold-entity-row'
+  - entities:
+      - entity: sensor.bathroom_washer_and_dryer_electrical_energy_today
+        icon: 'mdi:washing-machine'
+        name: Pralni In Sušilni Stroj (danes)
+      - entity: sensor.bathroom_washer_and_dryer_electrical_energy_cost_today
+        icon: hide
+        name: ' '
+      - type: divider
+      - entity: sensor.hallway_climate_electrical_energy_today
+        icon: 'mdi:snowflake'
+        name: Klima (danes)
+      - entity: sensor.hallway_climate_electrical_energy_cost_today
+        icon: hide
+        name: ' '
+      - type: divider
+      - entity: sensor.childrensroom_electronics_electrical_energy_today
+        icon: 'mdi:account-child'
+        name: Otroška Elektronika (danes)
+      - entity: sensor.childrensroom_electronics_electrical_energy_cost_today
+        icon: hide
+        name: ' '
+      - type: divider
+    head:
+      label: PORABA (merilne toke)
+      type: section
+    padding: 0
+    type: 'custom:fold-entity-row'
+  - entities:
+      - entity: sensor.backup_pc_daily_energy
+        name: Backup PC
+      - entity: sensor.bar_fridge_daily_energy
+        name: Bar Fridge
+      - entity: sensor.cinema_av_daily_energy
+        name: Cinema AV Gear
+      - entity: sensor.comms_rack_daily_energy
+        name: Comms Rack
+      - entity: sensor.rack_fan_daily_energy
+        name: Comms Rack Fan
+      - entity: sensor.dining_heater_north_energy_today
+        name: Dining Heater North
+      - entity: sensor.dining_heater_west_energy_today
+        name: Dining Heater West
+      - entity: sensor.dishwasher_energy_today
+        name: Dishwasher
+      - entity: sensor.electric_blanket_daily_energy
+        name: Electric Blanket
+      - entity: sensor.fridge_daily_energy
+        name: Fridge
+      - entity: sensor.lounge_av_daily_energy
+        name: Lounge AV Gear
+      - entity: sensor.lounge_dehumidifier_energy_today
+        name: Lounge Dehumidifier
+      - entity: sensor.rumpus_dehumidifier_energy_today
+        name: Rumpus Dehumidifier
+      - entity: sensor.spare_bedroom_heater_energy_today
+        name: Spare Bedroom
+      - entity: sensor.washing_machine_daily_energy
+        name: Washing Machine
+      - entity: sensor.workshop_critical_power_daily_energy
+        name: Workshop
+    head:
+      label: Monitored Devices
+      type: section
+    padding: 0
+    type: 'custom:fold-entity-row'
+show_header_toggle: false
+style: |
+  ha-card {
+    border: solid 2px var(--primary-color);
+  }
+title: ELEKTRIČNA ENERGIJA
+type: entities
