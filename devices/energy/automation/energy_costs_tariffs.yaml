@@ -1,0 +1,45 @@
+#################################################
+## TARIFFS CHANGE
+#################################################
+##
+- id: set_dark_theme_at_sunset
+  alias: 'Set Dark Theme At Sunset'
+  initial_state: true
+  trigger:
+    platform: time
+    at: "22:00:00"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.select_theme
+      option: Night
+  - service: utility_meter.select_tariff ###### Tariff change to night
+    data:
+      entity_id:
+      - utility_meter.bathroom_washer_and_dryer_electrical_energy_tariff
+      - utility_meter.hallway_climate_electrical_energy_tariff
+      - utility_meter.childrensroom_electronics_electrical_energy_tariff
+      tariff: MT
+##
+- id: set_light_theme_at_sunrise
+  alias: 'Set Light Theme At Sunrise'
+  initial_state: true
+  trigger:
+    platform: time
+    at: "6:00:00"
+  action:
+  - service: input_select.select_option
+    data:
+      entity_id: input_select.select_theme
+      option: Day
+  - service: utility_meter.select_tariff ###### Tariff change to day
+    data:
+      entity_id:
+      - utility_meter.bathroom_washer_and_dryer_electrical_energy_tariff
+      - utility_meter.hallway_climate_electrical_energy_tariff
+      - utility_meter.childrensroom_electronics_electrical_energy_tariff
+      tariff: VT
+##
+#################################################
+## END
+#################################################
