@@ -1,0 +1,48 @@
+####################################################
+##  ENERGY COSTS TEMPLATES             
+####################################################
+####################################################
+## CHILDRENSROOM ELECTRONICS
+####################################################
+##
+- platform: template
+  sensors:
+    childrensroom_electronics_electrical_energy_today:
+      entity_id:
+        - sensor.childrensroom_electronics_electrical_energy_tariff_vt
+        - sensor.childrensroom_electronics_electrical_energy_tariff_mt
+      value_template: "{{ (states('sensor.childrensroom_electronics_electrical_energy_tariff_vt')|float + states('sensor.childrensroom_electronics_electrical_energy_tariff_mt')|float)|round(3) }}"
+      unit_of_measurement: "kWh"
+##
+- platform: template
+  sensors:
+    childrensroom_electronics_electrical_energy_cost_today:
+      entity_id:
+        - sensor.childrensroom_electronics_electrical_energy_tariff_mt
+        - sensor.childrensroom_electronics_electrical_energy_tariff_vt
+        - input_number.electrical_energy_cost_vt
+        - input_number.electrical_energy_cost_mt
+      value_template: "{{ (states('sensor.childrensroom_electronics_electrical_energy_tariff_mt')|float * states('input_number.electrical_energy_cost_mt')|float + states('sensor.childrensroom_electronics_electrical_energy_tariff_vt')|float * states('input_number.electrical_energy_cost_vt')|float)|round(3) }}"
+      unit_of_measurement: "EUR"
+##
+- platform: template
+  sensors:
+    childrensroom_electronics_electrical_energy_vt_cost_today:
+      entity_id:
+        - sensor.childrensroom_electronics_electrical_energy_tariff_vt
+        - input_number.electrical_energy_cost_vt
+      value_template: "{{ (states('sensor.childrensroom_electronics_electrical_energy_tariff_vt')|float * states('input_number.electrical_energy_cost_vt')|float)|round(3) }}"
+      unit_of_measurement: "EUR"
+##
+- platform: template
+  sensors:
+    childrensroom_electronics_electrical_energy_mt_cost_today:
+      entity_id:
+        - sensor.childrensroom_electronics_electrical_energy_tariff_mt
+        - input_number.electrical_energy_cost_mt
+      value_template: "{{ (states('sensor.childrensroom_electronics_electrical_energy_tariff_mt')|float * states('input_number.electrical_energy_cost_mt')|float)|round(3) }}"
+      unit_of_measurement: "EUR"
+##
+####################################################
+## END
+####################################################
