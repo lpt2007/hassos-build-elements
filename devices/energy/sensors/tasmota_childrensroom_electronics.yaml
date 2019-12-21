@@ -1,0 +1,146 @@
+####################################################
+##  MQTT - SONOFF_POW_01         
+####################################################
+####################################################
+## CHILDRENSROOM ELECTRONICS
+####################################################
+##
+### ENERGY
+## 001
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_energy_yesterday"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "kWh"
+    value_template: "{{ value_json['ENERGY'].Yesterday }}"
+    force_update: true
+    icon: mdi:counter
+## 002
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_energy_today"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "kWh"
+    value_template: "{{ value_json['ENERGY'].Today }}"
+    force_update: true
+    icon: mdi:counter
+## 003
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_energy_total"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "kWh"
+    value_template: "{{ value_json['ENERGY'].Total }}"
+    force_update: true
+    icon: mdi:counter
+## 004
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_energy_relay"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: ""
+    value_template: "{{ value_json.POWER }}"
+    force_update: true
+    icon: mdi:electric-switch
+##
+### SERVICE
+##
+### ENERGY
+## 001
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_energy_power"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "W"
+    value_template: "{{ value_json['ENERGY'].Power }}"
+    force_update: true
+    icon: mdi:gauge
+## 002
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_energy_voltage"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "V"
+    value_template: "{{ value_json['ENERGY'].Voltage }}"
+    force_update: true
+    icon: mdi:gauge
+## 003
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_energy_current"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: "A"
+    value_template: "{{ value_json['ENERGY'].Current }}"
+    force_update: true
+    icon: mdi:gauge
+## 004
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_energy_time"
+    state_topic: "home/energy/sonoff_pow_01/tele/SENSOR"
+    unit_of_measurement: ""
+    value_template: "{{ value_json.Time }}"
+    force_update: true
+    icon: mdi:clock-outline
+##
+### WIFI
+## 001
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_ssid"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: ""
+    value_template: "{{ value_json.Wifi.SSId }}"
+    force_update: true
+    icon: mdi:access-point-network
+## 002
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_signal"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json.Wifi.RSSI }}"
+    force_update: true
+    icon: mdi:wifi-strength-4
+## 003
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_channel"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "ch"
+    value_template: "{{ value_json.Wifi.Channel }}"
+    force_update: true
+    icon: mdi:router-wireless-settings
+## 004
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_linkcount"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: ""
+    value_template: "{{ value_json.Wifi.LinkCount }}"
+    force_update: true
+    icon: mdi:link-variant
+## 005
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_time"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "time"
+    value_template: "{{ value_json.Time }}"
+    force_update: true
+    icon: mdi:clock-outline
+## 006
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_downtime"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "time"
+    value_template: "{{ value_json.Wifi.Downtime }}"
+    force_update: true
+    icon: mdi:clock-in
+## 007
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_uptime"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "time"
+    value_template: "{{ value_json.Uptime }}"
+    force_update: true
+    icon: mdi:clock-out
+## 008
+  - platform: mqtt    
+    name: "childrensroom_electronics_mqtt_pow_servis_wifi_loadavg"
+    state_topic: "home/energy/sonoff_pow_01/tele/STATE"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json.LoadAvg }}"
+    force_update: true
+    icon: mdi:gauge
+##
+####################################################
+## END
+####################################################
