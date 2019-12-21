@@ -1,0 +1,98 @@
+cards:
+  - content: OTROŠKA ELEKTRONIKA
+    type: markdown
+  - cards:
+      - color_thresholds:
+          - color: '#039BE5'
+            value: 0
+          - color: '#0da035'
+            value: 600
+          - color: '#e0b400'
+            value: 1200
+          - color: '#e45e65'
+            value: 2400
+        color_thresholds_transition: hard
+        entities:
+          - color: blue
+            entity: sensor.childrensroom_electronics_electrical_energy_today
+            name: EM
+          - color: red
+            entity: sensor.childrensroom_electronics_electrical_energy_tariff_vt
+            name: VT
+          - color: green
+            entity: sensor.childrensroom_electronics_electrical_energy_tariff_mt
+            name: MT
+          - color: grey
+            entity: binary_sensor.dark_outside
+            name: ' '
+            show_line: false
+            y_axis: secondary
+        group: false
+        hour24: true
+        hours_to_show: 24
+        icon: 'mdi:counter'
+        line_width: 4
+        name: PORABA
+        points_per_hour: 4
+        show:
+          extrema: true
+          fill: fade
+          icon: true
+          labels: false
+          name: true
+          state: true
+        state_map:
+          - label: DAN
+            value: 'off'
+          - label: NOČ
+            value: 'on'
+        style: |
+          ha-card {
+            border: solid 2px var(--primary-color);
+          }
+        type: 'custom:mini-graph-card'
+      - color_thresholds:
+          - color: '#039BE5'
+            value: 0
+          - color: '#0da035'
+            value: 600
+          - color: '#e0b400'
+            value: 1200
+          - color: '#e45e65'
+            value: 2400
+        color_thresholds_transition: hard
+        entities:
+          - color_thresholds: 'rgba(0,0,255,1)'
+            entity: sensor.childrensroom_electronics_mqtt_pow_servis_energy_power
+            name: trenutna moč
+          - color: grey
+            entity: binary_sensor.dark_outside
+            name: ' '
+            show_line: false
+            y_axis: secondary
+        group: false
+        hour24: true
+        hours_to_show: 24
+        icon: 'mdi:gauge'
+        line_width: 4
+        name: MOČ
+        points_per_hour: 4
+        show:
+          extrema: true
+          fill: fade
+          icon: true
+          labels: false
+          name: true
+          state: true
+        state_map:
+          - label: Dan
+            value: 'off'
+          - label: Noč
+            value: 'on'
+        style: |
+          ha-card {
+            border: solid 2px var(--primary-color);
+          }
+        type: 'custom:mini-graph-card'
+    type: horizontal-stack
+type: vertical-stack
