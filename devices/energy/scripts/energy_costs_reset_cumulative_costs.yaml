@@ -1,0 +1,17 @@
+#################################################
+## Script for resetting cumulative total cost
+#################################################
+##
+reset_cumulative_cost:
+  sequence:
+  - service: input_number.set_value
+    data:
+      entity_id: input_number.cumulative_energy_cost
+      value: 0
+  - service: input_datetime.set_datetime
+    entity_id: input_datetime.last_reset
+    data_template:
+      date: "{{ as_timestamp(now())|timestamp_custom('%Y-%m-%d') }}"
+#################################################
+## END
+#################################################
