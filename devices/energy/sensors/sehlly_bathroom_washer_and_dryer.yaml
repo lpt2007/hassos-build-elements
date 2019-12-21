@@ -1,0 +1,123 @@
+####################################################
+##  MQTT - SHELLY 1PM             
+####################################################
+####################################################
+## BATHROOM WASHER & DRYER
+####################################################
+##
+### ENERGY
+## 001
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_energy_total"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: "{{ (value_json.meters.0.total|float / 60000)|round(3) }}" # Fix for Watt-minutes
+    unit_of_measurement: "kWh"
+    scan_interval: 300
+## 002
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_energy_ison"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.relays.0.ison }}'
+    scan_interval: 300
+##
+### SERVIS
+##
+### ENERGY
+## 001
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_energy_power"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.meters.0.power }}'
+    unit_of_measurement: "W"
+    scan_interval: 300
+## 002
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_energy_overpower"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.relays.0.overpower }}'
+    scan_interval: 300
+## 003
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_energy_counters"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.meters.0.counters }}'
+    scan_interval: 300
+    unit_of_measurement: "W"
+## 004
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_temperature"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.temperature }}'
+    unit_of_measurement: "\u00b0C"
+    scan_interval: 300
+## 005
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_overtemperature"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.overtemperature }}'
+    scan_interval: 300
+## 006
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_energy_inputs"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.inputs.0.input }}'
+    scan_interval: 300
+## 007
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_energy_uptime"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.uptime }}'
+    unit_of_measurement: "s"
+    scan_interval: 300
+##
+### WIFI
+## 001
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_wifi_ssid"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.wifi_sta.ssid }}'
+    scan_interval: 300
+## 002
+  - platform: rest
+    name: "bathroom_washer_and_dryer_rest_1pm_servis_wifi_rssi"
+    resource: !secret shelly_1pm_01_http
+    username: !secret shelly_1pm_user
+    password: !secret shelly_1pm_pass
+    authentication: !secret shelly_1pm_aurhentication
+    value_template: '{{ value_json.wifi_sta.rssi }}'
+    scan_interval: 300
+    unit_of_measurement: "%"
+##
+####################################################
+## END
+####################################################
